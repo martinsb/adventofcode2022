@@ -53,7 +53,7 @@ class CargoCrane {
     fun execute(command: String, keepOrder: Boolean) {
         val matches = Regex("\\d+").findAll(command).toList()
         if (matches.size != 3) {
-            throw IllegalArgumentException("Command must consist of numbers")
+            throw IllegalArgumentException("Command must consist of exactly 3 numbers")
         }
         val count = matches[0].value.toInt()
         val from = matches[1].value.toInt() - 1
@@ -63,8 +63,6 @@ class CargoCrane {
         if (keepOrder) {
             items.reverse()
         }
-//
-//        val items = stacks[from].subList(stacks[from].size - count, stacks[from].size)
         items.forEach { stacks[to].push(it)}
     }
 
