@@ -63,8 +63,6 @@ class CargoCrane {
         if (keepOrder) {
             items.reverse()
         }
-//
-//        val items = stacks[from].subList(stacks[from].size - count, stacks[from].size)
         items.forEach { stacks[to].push(it)}
     }
 
